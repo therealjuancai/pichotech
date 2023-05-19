@@ -2,14 +2,9 @@ import sqlite3
 
 from flask import Flask, render_template, request, flash
 from forms import Login 
-from flask import Flask, render_template, request, jsonify, redirect, session, url_for
-from flask.helpers import flash, url_for
-from werkzeug.utils import secure_filename
-from werkzeug.wrappers import response
-from wtforms.i18n import messages_path
 from markupsafe import escape
 from db import consult_action, consult_select
-from werkzeug.security import check_password_hash, generate_password_hash
+from werkzeug.security import check_password_hash
 
 URL_DB="pichotech.db"
 app =Flask(__name__)
@@ -46,7 +41,7 @@ def login():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    form = Login()
+    form = signup()
 
     if form.validate_on_submit():
         username = form.username.data
@@ -57,8 +52,7 @@ def signup():
 
     return render_template('index.html', form=form)
 
-@app.route('/signup', methods=['POST'])
-def crearUsuarios(username, email, password):
+def crearUsuarios(username):
     try:
         with sqlite3.connect(URL_DB) as connection:
             cursor = connection.cursor()
