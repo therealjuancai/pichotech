@@ -29,10 +29,10 @@
                         {{ form.hidden_tag() }}
 
                         <label for="username" class="label">{{ form.username.label }}</label>
-                        {{ form.username(class="input input-username", placeholder="username") }}
+                        {{ form.username.label(class="input input-username", placeholder="username") }}
 
                         <label for="password" class="label">{{ form.password.label }}</label>
-                        {{ form.password(class="input input-password", placeholder="*********") }}
+                        {{ form.password.label(class="input input-password", placeholder="*********") }}
                         
                         {{ form.ingresar(class="primary-button login-button", value="log in") }}
                         <a href="">Forgot my password</a>
@@ -49,7 +49,7 @@
                         {{ form.hidden_tag() }}
             
                         <label for="name" class="label">Name</label>
-                        {{ form.nombres(class="input input-name", placeholder="Name") }}
+                        {{ form.username(class="input input-name", placeholder="Name") }}
             
                         <label for="email" class="label">Email Address</label>
                         {{ form.email(class="input input-email", placeholder="email@example.com.co") }}
