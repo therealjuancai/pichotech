@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+        <link rel="stylesheet" href="./styles.css" type="text/css">
+        <title>Document</title>
+
+    </head>
+
+    <body>
+        <div class="primaryContainer">
+            <div class="logoContainer">
+                <img src="Logo.png" alt="Logo" class="logo">
+            </div>
+            
+            <div class="login">
+                <div class="form-container">
+                    <h1 class="title">Login</h1>
+
+                    <form action="{{ url_for('login') }}" method="POST" class="form">
+                        {{ form.hidden_tag() }}
+
+                        <label for="username" class="label">{{ form.username.label }}</label>
+                        {{ form.username(class="input input-username", placeholder="username") }}
+
+                        <label for="password" class="label">{{ form.password.label }}</label>
+                        {{ form.password(class="input input-password", placeholder="*********") }}
+                        
+                        {{ form.ingresar(class="primary-button login-button", value="log in") }}
+                        <a href="">Forgot my password</a>
+
+                    </form>
+                </div>
+            </div>
+    
+            <div class="login">
+                <div class="form-container">
+                    <h1 class="title">Sign Up</h1>
+            
+                    <form action="{{ url_for('signup') }}" method="POST" class="form">
+                        {{ form.hidden_tag() }}
+            
+                        <label for="name" class="label">Name</label>
+                        {{ form.nombres(class="input input-name", placeholder="Name") }}
+            
+                        <label for="email" class="label">Email Address</label>
+                        {{ form.email(class="input input-email", placeholder="email@example.com.co") }}
+            
+                        <label for="new-password" class="label">Password</label>
+                        {{ form.password(class="input input-password", placeholder="*********") }}    
+            
+                        {{ form.crear(class="primary-button login-button", value="Create") }}
+                    </form>
+                </div>
+            </div>            
+        </div>
+
+        <!-- ACA -->
+        <footer class="footer">
+            Contacto: +57 315-739-2376
+        </footer>
+    </body>
+</html>
