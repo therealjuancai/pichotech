@@ -33,6 +33,7 @@
                             </ul>
                         </li>
                     </ul>
+                    <div class="margen">
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
@@ -40,15 +41,29 @@
                             <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                         </button>
                     </form>
-                    <div class="margen">
                     </div>
+                    {% if name %}
+                    <div class="margen">
+                    <p>{{name}}</p>
+                    </div>
+                    <div class="margen">
                     <form class="d-flex">
-                        <a href="{{ url_for('login') }}" class="btn btn-outline-dark">
-                            Iniciar Sesión
+                        <a href="{{ url_for('home') }}" class="btn btn-outline-dark">
+                            Cerrar Sesión
                             <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
                         </a>
                         </a>
                     </form>
+                    </div>
+                    {% else %}
+                        <form class="d-flex">
+                            <a href="{{ url_for('login_register') }}" class="btn btn-outline-dark">
+                                Iniciar Sesión
+                                <span class="badge bg-dark text-white ms-1 rounded-pill"></span>
+                            </a>
+                            </a>
+                        </form>
+                    {% endif %}
                 </div>
             </div>
         </nav>
@@ -68,7 +83,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" href="{{ url_for('static', filename='img/DiademasVsgSingularityVSG.png') }}" alt="..." />
+                            <img class="card-img-top" src="../static/img/DiademasVsgSingularityVSG.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -89,7 +104,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Venta</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="Img/KitPerifericosLoitech.png" alt="..." />
+                            <img class="card-img-top" src="../static/img/KitPerifericosLoitech.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -119,7 +134,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Venta</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="Img/RTX3060.png" alt="..." />
+                            <img class="card-img-top" src="../static/img/RTX3060.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -139,7 +154,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="Img/RTX3050.png" alt="..." />
+                            <img class="card-img-top" src="../static/img/RTX3050.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -168,7 +183,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Venta</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="Img/Inteli5.png" alt="..." />
+                            <img class="card-img-top" src="../static/img/Inteli5.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -188,7 +203,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="Img/MemoriaRam.png" alt="..." />
+                            <img class="card-img-top" src="../static/img/MemoriaRam.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -209,7 +224,7 @@
                             <!-- Sale badge-->
                             <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Venta</div>
                             <!-- Product image-->
-                            <img class="card-img-top" src="Img/Board.png" alt="..." />
+                            <img class="card-img-top" src="../static/img/Board.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -237,7 +252,7 @@
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="Img/Chasis.png" alt="..." />
+                            <img class="card-img-top" src="../static/img/Chasis.png" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
